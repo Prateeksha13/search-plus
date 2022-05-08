@@ -9,6 +9,9 @@
   --border-dark: #8e8e93;
   --border-light: #e6e6e6;
   --border-blue: #0088cc;
+  --text-highlight: #157cfb;
+  --text-green: #248a3d;
+  --text-red: #d70015;
 }
 
 body {

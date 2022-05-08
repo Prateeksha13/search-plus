@@ -2,3 +2,20 @@
   background-color: var(--backgroud-light);
   padding: 16px 172px;
 }
+
+.search-result-list {
+  margin: 45px 150px;
+  padding: 0 22px;
+}
+
+.search-filters {
+  display: flex;
+  padding: 16px 164px;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.search-filters .dropdown_wrapper {
+  min-width: 200px;
+  margin: 0 8px;
+  flex: 1;
+}
