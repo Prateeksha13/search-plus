@@ -10,7 +10,7 @@ import "./searchresults.css";
 const SearchResults = ({}) => {
   const [selectedProduct, setSelectedProduct] = useState({ name: "" });
   const [selectedModel, setSelectedModel] = useState({ name: "" });
-  const [selectedLocation, setSelectedLocation] = useState("United States");
+  const [selectedLocation, setSelectedLocation] = useState("");
   const [searchResponse, setSearchResponse] = useState({});
   const [selectedFinish, setSelectedFinish] = useState("Any");
   const [selectedStorage, setSelectedStorage] = useState("Any");
@@ -80,6 +80,13 @@ const SearchResults = ({}) => {
   const onSearch = () => {
     setShowFilters(true);
     setShowNoDataMessage(true);
+    if (!selectedLocation) {
+      setSelectedLocation({
+        name: "United States",
+        type: "country",
+        query: "location:united%20states&store=",
+      });
+    }
     setSelectedModel(
       selectedProduct.models && selectedProduct.models[0]
         ? selectedProduct.models[0]

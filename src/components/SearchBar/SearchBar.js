@@ -20,6 +20,7 @@ const SearchBar = ({
       <div className="search-bar-input-wrapper">
         <SearchField
           label=""
+          placeholder={"Search by product name"}
           shouldAutoFocus={true}
           getSuggestions={getProductSuggestions}
           renderSuggestion={renderProductSuggestions}
@@ -29,13 +30,14 @@ const SearchBar = ({
         <span className="horizontal-divider" />
         <SearchField
           label=""
+          placeholder={"Search by location name"}
           getSuggestions={getLocationSuggestions}
           renderSuggestion={renderLocationSuggestion}
           informSuggestionSelect={informLocationSuggestionSelect}
           getSuggestionValue={getLocationSuggestionValue}
         />
       </div>
-      <Button label="Search" onClick={onSearch} />
+      <Button role="button" label="Search" onClick={onSearch} />
     </div>
   );
 };

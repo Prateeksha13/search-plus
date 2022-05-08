@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders result item 1`] = `
+<div
+  className="search-result-item"
+>
+  <div
+    className="serial-number"
+  >
+    1
+    .
+  </div>
+  <div
+    className="store-information"
+  >
+    <h4
+      className="store-name"
+      role="heading"
+    >
+      Toledo
+      ,
+       
+      <span
+        className="highlighted-store-name"
+      >
+        Franklin Park Mall
+      </span>
+    </h4>
+    <address
+      className="store-address"
+    >
+      <p>
+        5001 Monroe Street, Toledo, OH 43623
+      </p>
+      <p>
+        (419) 473-4250
+      </p>
+    </address>
+  </div>
+  <div
+    className="stock-information"
+  >
+    <div
+      className="stock-detail"
+    >
+      Available:
+       
+      <span
+        className="content-green"
+      >
+        Yes
+      </span>
+    </div>
+    <div
+      className="stock-detail"
+    >
+      <span
+        className="content-green"
+      >
+        In Stock: 
+        20
+      </span>
+    </div>
+  </div>
+</div>
+`;

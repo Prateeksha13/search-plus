@@ -4,17 +4,17 @@ import SearchField from "./SearchField";
 it("changes the class when hovered", () => {
   const component = renderer.create(
     <SearchField
-      informSuggestionSelect={() => {
-        console.log("");
+      informSuggestionSelect={(value) => {
+        console.log(value);
       }}
-      getSuggestions={() => {
-        console.log("");
+      getSuggestions={(value) => {
+        console.log(value);
       }}
-      renderSuggestion={() => {
-        console.log("");
+      renderSuggestion={(value) => {
+        console.log(value);
       }}
-      getSuggestionValue={() => {
-        console.log("");
+      getSuggestionValue={(value) => {
+        console.log(value);
       }}
       label="Search"
       placeholder="Search by product"
@@ -23,20 +23,4 @@ it("changes the class when hovered", () => {
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
-
-  // manually trigger the callback
-  // renderer.act(() => {
-  //   tree.props.onMouseEnter();
-  // });
-  // re-rendering
-  // tree = component.toJSON();
-  // expect(tree).toMatchSnapshot();
-
-  // // manually trigger the callback
-  // renderer.act(() => {
-  //   tree.props.onMouseLeave();
-  // });
-  // // re-rendering
-  // tree = component.toJSON();
-  // expect(tree).toMatchSnapshot();
 });

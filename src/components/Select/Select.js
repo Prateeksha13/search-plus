@@ -9,7 +9,6 @@ function Select({
   isSearchable,
   data,
   dropdownContainerClassName,
-  dropdownClassNamePrefix,
   onChange,
   value,
   defaultValue,
@@ -22,10 +21,8 @@ function Select({
       <ReactSelect
         classNamePrefix={"app-select"}
         onInputChange={onInputChange}
-        // components={isNested && { Option: CustomOption }}
         isClearable={isClearable}
         menuPosition={"fixed"}
-        // styles={customStyles ? customStyles : localStyles}
         defaultValue={defaultValue}
         value={value}
         onChange={onChange}
@@ -38,7 +35,7 @@ function Select({
           colors: {
             ...theme.colors,
             primary25: "#ddf0f9",
-            primary: "#F5F5F7",
+            primary: "#007cff",
           },
         })}
       />
