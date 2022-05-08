@@ -65,6 +65,7 @@ const SearchField = ({
           value: value,
           onChange: onChange,
           autoFocus: shouldAutoFocus,
+          // onBlur: (event) => informSuggestionSelect(event.target.value),
         }}
         onSuggestionSelected={onSuggestionSelected}
       />

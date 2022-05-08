@@ -16,6 +16,7 @@ const SearchResults = ({}) => {
   const [selectedStorage, setSelectedStorage] = useState("Any");
   const [selectedAvailability, setSelectedAvailability] = useState("Yes/No");
   const [showFilters, setShowFilters] = useState(false);
+  const [showNoDataMessage, setShowNoDataMessage] = useState(false);
 
   useEffect(() => {
     onFilter();
@@ -78,6 +79,7 @@ const SearchResults = ({}) => {
 
   const onSearch = () => {
     setShowFilters(true);
+    setShowNoDataMessage(true);
     setSelectedModel(
       selectedProduct.models && selectedProduct.models[0]
         ? selectedProduct.models[0]
@@ -120,7 +122,6 @@ const SearchResults = ({}) => {
       });
     } else if (selectedAvailability === "No") {
       Object.keys(stockData).forEach((storeId) => {
-        console.log(stockData[storeId], stockData[storeId].stock, "no");
         if (stockData[storeId].stock === 0) {
           response[storeId] = stockData[storeId];
         }
@@ -288,7 +289,7 @@ const SearchResults = ({}) => {
               stockQty={searchResponse[storeId].stock}
             />
           ))}
-          {Object.keys(searchResponse).length === 0 && (
+          {Object.keys(searchResponse).length === 0 && showNoDataMessage && (
             <center>
               <h4>No results</h4>
             </center>

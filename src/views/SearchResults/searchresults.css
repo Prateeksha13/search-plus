@@ -4,18 +4,24 @@
 }
 
 .search-result-list {
-  margin: 45px 150px;
-  padding: 0 22px;
+  margin: 0px 150px;
+  padding: 64px 22px 45px;
 }
 
 .search-filters {
   display: flex;
   padding: 16px 164px;
   border-bottom: 1px solid var(--border-dark);
+  background-color: var(--white);
 }
 
 .search-filters .dropdown_wrapper {
   min-width: 200px;
   margin: 0 8px;
   flex: 1;
+}
+
+.top-sticky-controls {
+  position: sticky;
+  top: 44px;
 }

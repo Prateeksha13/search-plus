@@ -12,23 +12,24 @@ const SearchResultItem = ({
 }) => {
   return (
     <div className="search-result-item">
-      <div className="serial-number">{itemNumber}</div>
+      <div className="serial-number">{itemNumber}.</div>
       <div className="store-information">
-        <h4>
-          {locality}, {storeName}
+        <h4 role="heading" className="store-name">
+          {locality},{" "}
+          <span className="highlighted-store-name">{storeName}</span>
         </h4>
-        <address>
+        <address className="store-address">
           <p>{storeAddress[0]}</p>
           <p>{storeAddress[1]}</p>
         </address>
       </div>
       <div className="stock-information">
-        <div>
+        <div className="stock-detail">
           Available:{" "}
           {isProductAvailable && <span className="content-green">Yes</span>}
           {!isProductAvailable && <span className="content-red">No</span>}
         </div>
-        <div>
+        <div className="stock-detail">
           {isProductAvailable && (
             <span className="content-green">In Stock: {stockQty}</span>
           )}

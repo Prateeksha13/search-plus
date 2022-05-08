@@ -20,7 +20,7 @@ function Select({
   return (
     <div className={`dropdown_wrapper ${dropdownContainerClassName}`}>
       <ReactSelect
-        classNamePrefix={dropdownClassNamePrefix}
+        classNamePrefix={"app-select"}
         onInputChange={onInputChange}
         // components={isNested && { Option: CustomOption }}
         isClearable={isClearable}
@@ -38,7 +38,7 @@ function Select({
           colors: {
             ...theme.colors,
             primary25: "#ddf0f9",
-            primary: "#1e4c88",
+            primary: "#F5F5F7",
           },
         })}
       />

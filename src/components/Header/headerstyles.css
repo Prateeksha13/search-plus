@@ -1,6 +1,10 @@
 .app-header {
   background-color: var(--background-dark);
   height: 44px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
 }
 
 .app-header-content {

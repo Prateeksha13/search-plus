@@ -1,6 +1,8 @@
 .search-result-item {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid var(--border-light);
+  padding: 22px 0;
 }
 
 .search-result-item .store-information {
@@ -19,4 +21,31 @@
 
 .search-result-item .content-red {
   color: var(--text-red);
+}
+
+.search-result-item .serial-number {
+  margin-right: 16px;
+}
+
+.search-result-item .store-name {
+  margin: 0;
+}
+
+.search-result-item .highlighted-store-name {
+  color: var(--text-highlight);
+}
+
+.search-result-item .store-address {
+  color: var(--text-light);
+  font-size: 12px;
+  font-style: normal;
+  margin-top: 16px;
+}
+
+.search-result-item .store-address p {
+  margin: 5px 0;
+}
+
+.search-result-item .stock-detail {
+  margin-bottom: 8px;
 }
