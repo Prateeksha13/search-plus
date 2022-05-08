@@ -38,7 +38,7 @@ exports[`renders search results 1`] = `
         className="top-sticky-controls"
       >
         <div
-          className="search-bar-background"
+          className="home-search-bar-background"
         >
           <div
             className="search-bar-container"
