@@ -17,6 +17,7 @@ const SearchResults = ({}) => {
   const [selectedAvailability, setSelectedAvailability] = useState("Yes/No");
   const [showFilters, setShowFilters] = useState(false);
   const [showNoDataMessage, setShowNoDataMessage] = useState(false);
+  const [showHomeSearchBar, setShowHomeSearchBar] = useState(true);
 
   useEffect(() => {
     onFilter();
@@ -77,6 +78,7 @@ const SearchResults = ({}) => {
   };
 
   const onSearch = () => {
+    setShowHomeSearchBar(false);
     setShowFilters(true);
     setShowNoDataMessage(true);
     if (!selectedLocation) {
@@ -226,7 +228,13 @@ const SearchResults = ({}) => {
     <Layout>
       <div className="search-result-content">
         <div className="top-sticky-controls">
-          <div className="search-bar-background">
+          <div
+            className={
+              showHomeSearchBar
+                ? "home-search-bar-background"
+                : "search-bar-background"
+            }
+          >
             <SearchBar
               onSearch={onSearch}
               getProductSuggestions={getProductSuggestions}

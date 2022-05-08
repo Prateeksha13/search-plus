@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import SearchField from "../SearchField/SearchField";
 import Button from "../Button/Button";

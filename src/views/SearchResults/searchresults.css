@@ -1,3 +1,10 @@
+.home-search-bar-background {
+  background-color: var(--backgroud-light);
+  padding: 16px;
+  margin: 150px 164px 45px;
+  border-radius: 15px;
+}
+
 .search-bar-background {
   background-color: var(--backgroud-light);
   padding: 16px 172px;
