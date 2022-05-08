@@ -1,0 +1,23 @@
+.app-header {
+  background-color: var(--background-dark);
+  height: 44px;
+}
+
+.app-header-content {
+  margin: 0 150px;
+  padding: 0 22px;
+}
+
+.app-header-brand {
+  display: flex;
+  text-decoration: none;
+}
+
+.app-header-brand-name {
+  font-size: 17px;
+  display: inline-flex;
+  font-weight: 500;
+  align-items: center;
+  color: var(--white);
+  margin-left: 7px;
+}

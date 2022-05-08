@@ -1,0 +1,25 @@
+.search-bar-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.horizontal-divider {
+  width: 1px;
+  background-color: var(--border-dark);
+  margin: 8px 16px;
+  min-height: 24px;
+}
+
+.search-bar-input-wrapper {
+  width: 100%;
+  display: flex;
+}
+
+.search-bar-input-wrapper .search-field-wrapper {
+  flex: 1;
+}
+
+.search-bar-container .button-primary {
+  margin-left: 16px;
+}

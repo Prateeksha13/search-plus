@@ -1,0 +1,100 @@
+.search-field-wrapper {
+  display: flex;
+  position: relative;
+}
+
+.search-field-icon {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  z-index: 1;
+}
+
+.react-autosuggest__container {
+  position: relative;
+  width: 100%;
+}
+
+.react-autosuggest__input {
+  width: 100%;
+  padding: 12px 16px 12px 44px;
+  border-radius: 12px;
+  background: var(--white);
+  border: 1px solid var(--border-dark);
+  font-weight: normal;
+  font-size: 17px;
+  text-align: left;
+  color: var(--text-color);
+  box-sizing: border-box;
+  -webkit-appearance: none;
+}
+
+.react-autosuggest__input--focused {
+  outline: none;
+  border-color: var(--border-blue);
+}
+
+.react-autosuggest__input--open {
+  border-radius: 15px 15px 0 0;
+}
+
+.react-autosuggest__input::-ms-clear {
+  display: none;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+
+.react-autosuggest__suggestions-container--open {
+  display: block;
+  position: absolute;
+  top: 44px;
+  width: 100%;
+  border: 1px solid var(--border-dark);
+  background-color: var(--white);
+  font-size: 17px;
+  z-index: 2;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  width: calc(100% - 2px);
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 16px 16px;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #ddd;
+}
+
+.react-autosuggest__section-container {
+  border-top: 1px dashed #ccc;
+}
+
+.react-autosuggest__section-container--first {
+  border-top: 0;
+}
+
+.react-autosuggest__section-title {
+  padding: 10px 0 0 10px;
+  font-size: 12px;
+  color: #777;
+}
+
+.autocomplete-wrapper .autocomplete-label {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #07032b;
+  color: var(--text-color);
+  margin-bottom: 16px;
+  display: block;
+  letter-spacing: 0.02rem;
+}
