@@ -74,7 +74,6 @@ const SearchResults = ({}) => {
     if (selectedLocation.name) {
       onSearch();
     }
-    console.log(suggestion, suggestionValue);
   };
 
   const onSearch = () => {
@@ -93,97 +92,101 @@ const SearchResults = ({}) => {
         : { name: "" }
     );
     let stockData = {};
-    stores.forEach((store) => {
-      if (
-        store[selectedLocation.type] &&
-        store[selectedLocation.type] === selectedLocation.name
-      ) {
-        stockData[store.id] = {
-          store: store,
-          stock: 0,
-        };
-      }
-    });
-
     let response = {};
-    inventory.forEach((item) => {
-      if (
-        item.product === selectedProduct.name &&
-        item.model === selectedModel.name &&
-        (item.finish === selectedFinish || selectedFinish === "Any") &&
-        (item.storage === selectedStorage || selectedStorage === "Any") &&
-        Object.keys(stockData).indexOf(item.store_id) > -1
-      ) {
-        stockData[item.store_id] = {
-          ...stockData[item.store_id],
-          stock: stockData[item.store_id].stock + item.stock,
-        };
+
+    if (selectedProduct.name) {
+      stores.forEach((store) => {
+        if (
+          store[selectedLocation.type] &&
+          store[selectedLocation.type] === selectedLocation.name
+        ) {
+          stockData[store.id] = {
+            store: store,
+            stock: 0,
+          };
+        }
+      });
+
+      inventory.forEach((item) => {
+        if (
+          item.product === selectedProduct.name &&
+          item.model === selectedModel.name &&
+          (item.finish === selectedFinish || selectedFinish === "Any") &&
+          (item.storage === selectedStorage || selectedStorage === "Any") &&
+          Object.keys(stockData).indexOf(item.store_id) > -1
+        ) {
+          stockData[item.store_id] = {
+            ...stockData[item.store_id],
+            stock: stockData[item.store_id].stock + item.stock,
+          };
+        }
+      });
+
+      if (selectedAvailability === "Yes") {
+        Object.keys(stockData).forEach((storeId) => {
+          if (stockData[storeId].stock > 0) {
+            response[storeId] = stockData[storeId];
+          }
+        });
+      } else if (selectedAvailability === "No") {
+        Object.keys(stockData).forEach((storeId) => {
+          if (stockData[storeId].stock === 0) {
+            response[storeId] = stockData[storeId];
+          }
+        });
+      } else {
+        response = { ...stockData };
       }
-    });
-
-    if (selectedAvailability === "Yes") {
-      Object.keys(stockData).forEach((storeId) => {
-        if (stockData[storeId].stock > 0) {
-          response[storeId] = stockData[storeId];
-        }
-      });
-    } else if (selectedAvailability === "No") {
-      Object.keys(stockData).forEach((storeId) => {
-        if (stockData[storeId].stock === 0) {
-          response[storeId] = stockData[storeId];
-        }
-      });
-    } else {
-      response = { ...stockData };
     }
-
     setSearchResponse(response);
   };
 
   const onFilter = () => {
     let stockData = {};
-    stores.forEach((store) => {
-      if (
-        store[selectedLocation.type] &&
-        store[selectedLocation.type] === selectedLocation.name
-      ) {
-        stockData[store.id] = {
-          store: store,
-          stock: 0,
-        };
-      }
-    });
-
     let response = {};
-    inventory.forEach((item) => {
-      if (
-        item.model === selectedModel.name &&
-        (item.finish === selectedFinish || selectedFinish === "Any") &&
-        (item.storage === selectedStorage || selectedStorage === "Any") &&
-        Object.keys(stockData).indexOf(item.store_id) > -1
-      ) {
-        stockData[item.store_id] = {
-          ...stockData[item.store_id],
-          stock: stockData[item.store_id].stock + item.stock,
-        };
-      }
-    });
 
-    if (selectedAvailability === "Yes") {
-      Object.keys(stockData).forEach((storeId) => {
-        if (stockData[storeId].stock > 0) {
-          response[storeId] = stockData[storeId];
+    if (selectedProduct.name) {
+      stores.forEach((store) => {
+        if (
+          store[selectedLocation.type] &&
+          store[selectedLocation.type] === selectedLocation.name
+        ) {
+          stockData[store.id] = {
+            store: store,
+            stock: 0,
+          };
         }
       });
-    } else if (selectedAvailability === "No") {
-      Object.keys(stockData).forEach((storeId) => {
-        console.log(stockData[storeId].stock, "no");
-        if (stockData[storeId].stock === 0) {
-          response[storeId] = stockData[storeId];
+      inventory.forEach((item) => {
+        if (
+          item.model === selectedModel.name &&
+          (item.finish === selectedFinish || selectedFinish === "Any") &&
+          (item.storage === selectedStorage || selectedStorage === "Any") &&
+          Object.keys(stockData).indexOf(item.store_id) > -1
+        ) {
+          stockData[item.store_id] = {
+            ...stockData[item.store_id],
+            stock: stockData[item.store_id].stock + item.stock,
+          };
         }
       });
-    } else {
-      response = { ...stockData };
+
+      if (selectedAvailability === "Yes") {
+        Object.keys(stockData).forEach((storeId) => {
+          if (stockData[storeId].stock > 0) {
+            response[storeId] = stockData[storeId];
+          }
+        });
+      } else if (selectedAvailability === "No") {
+        Object.keys(stockData).forEach((storeId) => {
+          console.log(stockData[storeId].stock, "no");
+          if (stockData[storeId].stock === 0) {
+            response[storeId] = stockData[storeId];
+          }
+        });
+      } else {
+        response = { ...stockData };
+      }
     }
     setSearchResponse(response);
   };
