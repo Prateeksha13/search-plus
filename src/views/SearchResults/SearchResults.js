@@ -224,7 +224,7 @@ const SearchResults = ({}) => {
               getLocationSuggestionValue={getLocationSuggestionValue}
             />
           </div>
-          {selectedProduct.name && showFilters && (
+          {selectedProduct.name && selectedLocation.name && showFilters && (
             <div className="search-filters">
               <Select
                 data={
