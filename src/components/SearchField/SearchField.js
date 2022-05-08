@@ -13,6 +13,7 @@ const SearchField = ({
   placeholder,
   inputRegex,
   shouldAutoFocus,
+  onInputChange,
 }) => {
   const [value, setValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -29,6 +30,7 @@ const SearchField = ({
     } else {
       setValue(newValue);
     }
+    onInputChange(newValue);
   };
 
   // Autosuggest will call this function every time you need to update suggestions.

@@ -179,7 +179,6 @@ const SearchResults = ({}) => {
         });
       } else if (selectedAvailability === "No") {
         Object.keys(stockData).forEach((storeId) => {
-          console.log(stockData[storeId].stock, "no");
           if (stockData[storeId].stock === 0) {
             response[storeId] = stockData[storeId];
           }
@@ -207,6 +206,22 @@ const SearchResults = ({}) => {
     setSelectedAvailability(value.value);
   };
 
+  const onProductInputChange = (value) => {
+    if (value.trim() === "") {
+      setSelectedProduct({ name: "" });
+    }
+  };
+
+  const onLocationInputChange = (value) => {
+    if (value.trim() === "") {
+      setSelectedLocation({
+        name: "United States",
+        type: "country",
+        query: "location:united%20states&store=",
+      });
+    }
+  };
+
   return (
     <Layout>
       <div className="search-result-content">
@@ -222,6 +237,8 @@ const SearchResults = ({}) => {
               renderLocationSuggestion={renderLocationSuggestion}
               informLocationSuggestionSelect={informLocationSuggestionSelect}
               getLocationSuggestionValue={getLocationSuggestionValue}
+              onLocationInputChange={onLocationInputChange}
+              onProductInputChange={onProductInputChange}
             />
           </div>
           {selectedProduct.name && selectedLocation.name && showFilters && (

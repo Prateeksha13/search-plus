@@ -14,6 +14,8 @@ const SearchBar = ({
   renderLocationSuggestion,
   getLocationSuggestionValue,
   informLocationSuggestionSelect,
+  onLocationInputChange,
+  onProductInputChange,
 }) => {
   return (
     <div className="search-bar-container">
@@ -26,6 +28,7 @@ const SearchBar = ({
           renderSuggestion={renderProductSuggestions}
           informSuggestionSelect={informProductSuggestionSelect}
           getSuggestionValue={getProductSuggestionValue}
+          onInputChange={onProductInputChange}
         />
         <span className="horizontal-divider" />
         <SearchField
@@ -35,6 +38,7 @@ const SearchBar = ({
           renderSuggestion={renderLocationSuggestion}
           informSuggestionSelect={informLocationSuggestionSelect}
           getSuggestionValue={getLocationSuggestionValue}
+          onInputChange={onLocationInputChange}
         />
       </div>
       <Button role="button" label="Search" onClick={onSearch} />

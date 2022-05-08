@@ -72,7 +72,7 @@ exports[`renders search results 1`] = `
                     onChange={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
-                    placeholder="Search"
+                    placeholder="Search by product name"
                     type="text"
                     value=""
                   />
@@ -111,7 +111,7 @@ exports[`renders search results 1`] = `
                     onChange={[Function]}
                     onFocus={[Function]}
                     onKeyDown={[Function]}
-                    placeholder="Search"
+                    placeholder="Search by location name"
                     type="text"
                     value=""
                   />
