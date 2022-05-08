@@ -18,3 +18,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 2. Store search support
 3. Infinite scroll
 4. Popovers to show store hours and stock details
+5. Home screen
+6. Popular searches
